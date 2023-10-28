@@ -9,11 +9,11 @@ using DAL.Data;
 
 #nullable disable
 
-namespace WebApplication3.Migrations
+namespace DAL.Migrations
 {
     [DbContext(typeof(WebApplication3Context))]
-    [Migration("20231027190138_ChangedDb2")]
-    partial class ChangedDb2
+    [Migration("20231027172330_ChangedTypesInProjects2")]
+    partial class ChangedTypesInProjects2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

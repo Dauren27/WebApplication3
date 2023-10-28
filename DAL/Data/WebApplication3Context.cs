@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Common.Models;
 
-namespace WebApplication3.Data
+namespace DAL.Data
 {
     public class WebApplication3Context : DbContext
     {
+
         public WebApplication3Context (DbContextOptions<WebApplication3Context> options)
             : base(options)
         {
@@ -16,6 +17,6 @@ namespace WebApplication3.Data
 
         public DbSet<Common.Models.Employee> Employee { get; set; } = default!;
 
-        public DbSet<Common.Models.Project> Project { get; set; } = default!;
+        public DbSet<Project> Project { get; set; } = default!;
     }
 }

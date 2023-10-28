@@ -1,8 +1,8 @@
-﻿using WebApplication3.Repositories.Interfaces;
+﻿using DAL.Repositories.Interfaces;
 using Common.Models;
-using WebApplication3.Services.Interfaces;
+using BLL.Services.Interfaces;
 
-namespace WebApplication3.Services
+namespace BLL.Services
 {
     public class ProjectService:IProjectService
     {

@@ -9,11 +9,11 @@ using DAL.Data;
 
 #nullable disable
 
-namespace WebApplication3.Migrations
+namespace DAL.Migrations
 {
     [DbContext(typeof(WebApplication3Context))]
-    [Migration("20231027190138_ChangedDb2")]
-    partial class ChangedDb2
+    [Migration("20231027171347_ChangedTypesInProjects")]
+    partial class ChangedTypesInProjects
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,15 +76,28 @@ namespace WebApplication3.Migrations
                     b.Property<int>("Priority")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectManager")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProjectManagerId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProjectManagerId");
+
                     b.ToTable("Project");
+                });
+
+            modelBuilder.Entity("Common.Models.Project", b =>
+                {
+                    b.HasOne("Common.Models.Employee", "ProjectManager")
+                        .WithMany()
+                        .HasForeignKey("ProjectManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProjectManager");
                 });
 #pragma warning restore 612, 618
         }

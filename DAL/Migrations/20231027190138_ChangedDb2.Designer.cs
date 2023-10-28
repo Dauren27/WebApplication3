@@ -9,7 +9,7 @@ using DAL.Data;
 
 #nullable disable
 
-namespace WebApplication3.Migrations
+namespace DAL.Migrations
 {
     [DbContext(typeof(WebApplication3Context))]
     [Migration("20231027190138_ChangedDb2")]

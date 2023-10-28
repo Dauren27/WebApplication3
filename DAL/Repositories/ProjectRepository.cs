@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common.Models;
-using WebApplication3.Data;
-using WebApplication3.Repositories.Interfaces;
+using DAL.Data;
+using DAL.Repositories.Interfaces;
 
-namespace WebApplication3.Repositories
+namespace DAL.Repositories
 {
     public class ProjectRepository : IProjectRepository
     { 

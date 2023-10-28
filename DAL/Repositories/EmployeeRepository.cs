@@ -5,18 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Common.Models;
-using WebApplication3.Data;
+using DAL.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+//using Microsoft.AspNetCore.Mvc;
+//using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebApplication3.Repositories.Interfaces;
+using DAL.Repositories.Interfaces;
 
-namespace WebApplication3.Repositories
+namespace DAL.Repositories
 {
     public class EmployeeRepository : IEmployeeRepository
     {

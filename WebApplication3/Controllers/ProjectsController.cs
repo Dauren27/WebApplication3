@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Common.Models;
-using WebApplication3.Data;
-using WebApplication3.Services;
-using WebApplication3.Services.Interfaces;
-using WebApplication3.Repositories.Interfaces;
+using DAL.Data;
+using BLL.Services;
+using BLL.Services.Interfaces;
+using DAL.Repositories.Interfaces;
 using WebApplication3.Views.ViewModels;
-using WebApplication3.Views.ViewModels;
+
 
 namespace WebApplication3.Controllers
 {

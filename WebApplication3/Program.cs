@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using WebApplication3.Data;
-using WebApplication3.Services;
-using WebApplication3.Repositories;
-using WebApplication3.Repositories.Interfaces;
+using DAL.Data;
+using BLL.Services;
+using DAL.Repositories;
+using DAL.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WebApplication3Context>(options =>

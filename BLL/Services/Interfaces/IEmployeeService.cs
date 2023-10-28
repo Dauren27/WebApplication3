@@ -1,8 +1,8 @@
 ﻿using Common.Models;
 
-namespace WebApplication3.Repositories.Interfaces
+namespace BLL.Services.Interfaces
 {
-    public interface IEmployeeRepository
+    public interface IEmployeeService
     {
         Task<List<Employee>> GetEmployeesAsync();
         Task<Employee> GetEmployeeByIdAsync(int id);

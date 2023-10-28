@@ -1,10 +1,10 @@
 ﻿using Common.Models;
-using WebApplication3.Repositories;
-using WebApplication3.Data;
-using WebApplication3.Repositories.Interfaces;
-using WebApplication3.Services.Interfaces;
+using DAL.Repositories;
+using DAL.Data;
+using DAL.Repositories.Interfaces;
+using BLL.Services.Interfaces;
 
-namespace WebApplication3.Services
+namespace BLL.Services
 {
     public class EmployeeService:IEmployeeService
     {

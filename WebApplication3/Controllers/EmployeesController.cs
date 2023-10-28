@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Common.Models;
-using WebApplication3.Data;
-using WebApplication3.Services;
-using WebApplication3.Services.Interfaces;
+using DAL.Data;
+using BLL.Services;
+using BLL.Services.Interfaces;
 
 namespace WebApplication3.Controllers
 {

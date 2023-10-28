@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using DAL.Data;
 
 #nullable disable
 
-namespace WebApplication3.Migrations
+namespace DAL.Migrations
 {
     [DbContext(typeof(WebApplication3Context))]
-    [Migration("20231027190138_ChangedDb2")]
-    partial class ChangedDb2
+    partial class WebApplication3ContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

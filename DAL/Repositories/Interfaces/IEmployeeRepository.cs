@@ -1,8 +1,8 @@
 ﻿using Common.Models;
 
-namespace WebApplication3.Services.Interfaces
+namespace DAL.Repositories.Interfaces
 {
-    public interface IEmployeeService
+    public interface IEmployeeRepository
     {
         Task<List<Employee>> GetEmployeesAsync();
         Task<Employee> GetEmployeeByIdAsync(int id);
