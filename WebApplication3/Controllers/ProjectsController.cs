@@ -10,6 +10,8 @@ using WebApplication3.Data;
 using WebApplication3.Services;
 using WebApplication3.Services.Interfaces;
 using WebApplication3.Repositories.Interfaces;
+using WebApplication3.Views.ViewModels;
+using WebApplication3.Views.ViewModels;
 
 namespace WebApplication3.Controllers
 {
@@ -22,10 +24,45 @@ namespace WebApplication3.Controllers
             _projectService = projectService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(DateTime? startDateMin, DateTime? startDateMax, string sortOrder)
         {
             var projects = await _projectService.GetProjectsAsync();
-            return View(projects);
+
+            if (startDateMin.HasValue)
+            {
+                projects = projects.Where(p => p.StartDate >= startDateMin).ToList();
+            }
+
+            if (startDateMax.HasValue)
+            {
+                projects = projects.Where(p => p.StartDate <= startDateMax).ToList();
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    projects = projects.OrderByDescending(p => p.Name).ToList();
+                    break;
+                case "StartDate":
+                    projects = projects.OrderBy(p => p.StartDate).ToList();
+                    break;
+                case "start_date_desc":
+                    projects = projects.OrderByDescending(p => p.StartDate).ToList();
+                    break;
+                default:
+                    projects = projects.OrderBy(p => p.Name).ToList();
+                    break;
+            }
+
+            var viewModel = new ProjectViewModel
+            {
+                Projects = projects.ToList(),
+                StartDateMin = startDateMin,
+                StartDateMax = startDateMax,
+                SortOrder = sortOrder
+            };
+
+            return View(viewModel);
         }
 
         public async Task<IActionResult> Details(int id)

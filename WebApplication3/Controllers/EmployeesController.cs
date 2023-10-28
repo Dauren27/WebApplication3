@@ -97,14 +97,14 @@ namespace WebApplication3.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var employee = await _employeeService.GetEmployeeByIdAsync(id.Value);
+            var employee = await _employeeService.GetEmployeeByIdAsync(id);
             if (employee == null)
             {
                 return NotFound();
